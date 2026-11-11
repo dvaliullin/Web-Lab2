@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-title">Валиуллин Даниил Равилевич, P3231</div>
+        <div class="header-subtitle">Вариант: 91365510</div>
+    </header>
+
+    <div class="layout-wrapper">
+        <main class="content-container">
+            
+            <section class="card" id="interactive-card">
+                <h3>Координатная плоскость</h3>
+                <canvas id="graph-canvas" width="360" height="360"></canvas>
+
+                <form id="check-form">
+                    <div class="form-group">
+                        <label>Координата X:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item"><input type="checkbox" name="x-val" value="-5">-5</label>
+                            <label class="checkbox-item"><input type="checkbox" name="x-val" value="-4">-4</label>
+                            <label class="checkbox-item"><input type="checkbox" name="x-val" value="-3">-3</label>
+                            <label class="checkbox-item"><input type="checkbox" name="x-val" value="-2">-2</label>
+                            <label class="checkbox-item"><input type="checkbox" name="x-val" value="-1">-1</label>
+                            <label class="checkbox-item"><input type="checkbox" name="x-val" value="0" checked>0</label>
+                            <label class="checkbox-item"><input type="checkbox" name="x-val" value="1">1</label>
+                            <label class="checkbox-item"><input type="checkbox" name="x-val" value="2">2</label>
+                            <label class="checkbox-item"><input type="checkbox" name="x-val" value="3">3</label>
+                        </div>
+                        <div id="x-error" class="error-message">Выберите одно значение X</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="y-input">Координата Y (-5 ... 5):</label>
+                        <input type="text" id="y-input" class="form-control-input" placeholder="Число строго от -5 до 5" autocomplete="off">
+                        <div id="y-error" class="error-message">Введите число в интервале (-5 ... 5)</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Радиус R:</label>
+                        <div class="r-buttons-group">
+                            <button type="button" class="btn-r" data-r="1">1</button>
+                            <button type="button" class="btn-r active" data-r="2">2</button>
+                            <button type="button" class="btn-r" data-r="3">3</button>
+                            <button type="button" class="btn-r" data-r="4">4</button>
+                            <button type="button" class="btn-r" data-r="5">5</button>
+                        </div>
+                        <input type="hidden" id="r-value" value="2">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Проверить точку</button>
+                </form>
+            </section>
+
+            <section class="card" id="results-card">
+                <div class="results-header">
+                    <h3>История результатов</h3>
+                    <button id="clear-btn" class="btn-clear" type="button">Очистить</button>
+                </div>
+                
+                <table id="results-table">
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>R</th>
+                            <th>Результат</th>
+                            <th>Дата и время</th>
+                            <th>Время работы (мкс)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body"></tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
